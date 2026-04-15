@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Standalone export: same diagram as slide 75 in complete-software-testing-course-preview.html -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-labelledby="sw-layers-title">
+  <title id="sw-layers-title">Three software layers: clients, UI, servers, database</title>
+  <defs>
+    <linearGradient id="sl75-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7fafc"/>
+      <stop offset="45%" stop-color="#edf2f7"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="sl75-ui" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f7fc"/>
+    </linearGradient>
+    <linearGradient id="sl75-srv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+    <linearGradient id="sl75-db" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4faf6"/>
+    </linearGradient>
+    <filter id="sl75-sh" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0d2b45" flood-opacity="0.1"/>
+    </filter>
+    <filter id="sl75-sh-soft" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-opacity="0.08"/>
+    </filter>
+    <marker id="sl75-arr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#b8943d"/>
+    </marker>
+  </defs>
+  <rect width="800" height="500" fill="url(#sl75-bg)"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="700" fill="#0d2b45">Three software layers</text>
+  <text x="400" y="54" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="10" fill="#5a6d7e">End-to-end path - where requests flow and where testing focuses</text>
+  <line x1="48" y1="66" x2="752" y2="66" stroke="#b8943d" stroke-width="1.25" opacity="0.55"/>
+  <rect x="28" y="88" width="172" height="384" rx="14" fill="rgba(255,255,255,0.55)" stroke="#cbd5e0" stroke-width="1.5" filter="url(#sl75-sh-soft)"/>
+  <text x="114" y="112" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="700" fill="#0d2b45" letter-spacing="0.06em">CLIENTS</text>
+  <text x="114" y="128" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8.5" fill="#718096">User devices</text>
+  <rect x="52" y="148" width="88" height="56" rx="6" fill="#fff" stroke="#4a6b82" stroke-width="2" filter="url(#sl75-sh-soft)"/>
+  <rect x="60" y="156" width="72" height="36" rx="3" fill="#e8f0f8" stroke="#94a8b8" stroke-width="1"/>
+  <line x1="68" y1="164" x2="124" y2="164" stroke="#cbd5e0" stroke-width="1"/>
+  <line x1="68" y1="172" x2="110" y2="172" stroke="#cbd5e0" stroke-width="1"/>
+  <rect x="76" y="208" width="76" height="8" rx="2" fill="#cbd5e0"/>
+  <text x="96" y="200" font-family="Segoe UI, system-ui, sans-serif" font-size="7.5" fill="#4a5568">Desktop</text>
+  <rect x="68" y="238" width="52" height="96" rx="10" fill="#fff" stroke="#4a6b82" stroke-width="2" filter="url(#sl75-sh-soft)"/>
+  <rect x="76" y="252" width="36" height="64" rx="4" fill="#e8f0f8"/>
+  <circle cx="94" cy="248" r="2" fill="#cbd5e0"/>
+  <text x="94" y="352" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="7.5" fill="#4a5568">Mobile</text>
+  <path d="M 114 344 L 114 368" stroke="#94a8b8" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="114" y="388" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8" fill="#5a6d7e">Browser / app / API client</text>
+  <path d="M 200 268 L 232 268" stroke="#4a6b82" stroke-width="2.5" marker-end="url(#sl75-arr)"/>
+  <text x="216" y="258" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8" fill="#718096">LAN / WAN / internet</text>
+  <g filter="url(#sl75-sh)">
+    <rect x="248" y="88" width="524" height="102" rx="16" fill="url(#sl75-ui)" stroke="#0d2b45" stroke-width="2.5"/>
+    <rect x="248" y="88" width="7" height="102" rx="3" fill="#b8943d"/>
+    <circle cx="278" cy="139" r="16" fill="rgba(184,148,61,0.2)" stroke="#b8943d" stroke-width="2"/>
+    <text x="278" y="145" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" fill="#0d2b45">1</text>
+    <text x="310" y="118" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0d2b45">User interface (UI)</text>
+    <text x="310" y="138" font-family="Segoe UI, system-ui, sans-serif" font-size="10.5" fill="#4a5568">Presentation layer - what users see and interact with</text>
+    <text x="310" y="158" font-family="Segoe UI, system-ui, sans-serif" font-size="9.5" fill="#1565b5" font-weight="600">QA: functional, usability, validation, accessibility</text>
+    <rect x="640" y="108" width="120" height="52" rx="8" fill="rgba(13,43,69,0.06)" stroke="#cbd5e0" stroke-width="1"/>
+    <text x="700" y="128" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8" font-weight="700" fill="#0d2b45">HTTP / HTTPS</text>
+    <text x="700" y="144" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="7.5" fill="#718096">REST, SOAP, GraphQL</text>
+  </g>
+  <line x1="510" y1="190" x2="510" y2="212" stroke="#b8943d" stroke-width="3.5" marker-end="url(#sl75-arr)"/>
+  <text x="528" y="206" font-family="Segoe UI, system-ui, sans-serif" font-size="8.5" fill="#5a6d7e">Application requests</text>
+  <g filter="url(#sl75-sh)">
+    <rect x="248" y="218" width="524" height="112" rx="16" fill="url(#sl75-srv)" stroke="#1565b5" stroke-width="2.8"/>
+    <rect x="248" y="218" width="7" height="112" rx="3" fill="#1565b5" opacity="0.85"/>
+    <circle cx="278" cy="274" r="16" fill="rgba(21,101,181,0.12)" stroke="#1565b5" stroke-width="2"/>
+    <text x="278" y="280" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" fill="#0d2b45">2</text>
+    <text x="310" y="248" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0d2b45">Servers</text>
+    <text x="310" y="270" font-family="Segoe UI, system-ui, sans-serif" font-size="10.5" fill="#4a5568">Application and web tiers: sessions, APIs, logic, integrations</text>
+    <text x="310" y="292" font-family="Segoe UI, system-ui, sans-serif" font-size="9.5" fill="#1565b5" font-weight="600">QA: performance, load, security, contracts</text>
+    <rect x="640" y="242" width="120" height="60" rx="8" fill="rgba(21,101,181,0.08)" stroke="#cbd5e0" stroke-width="1"/>
+    <text x="700" y="262" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8" font-weight="700" fill="#0d2b45">Middleware</text>
+    <text x="700" y="278" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="7.5" fill="#718096">Auth, cache, queues</text>
+  </g>
+  <line x1="510" y1="330" x2="510" y2="352" stroke="#b8943d" stroke-width="3.5" marker-end="url(#sl75-arr)"/>
+  <text x="528" y="346" font-family="Segoe UI, system-ui, sans-serif" font-size="8.5" fill="#5a6d7e">SQL, pools, ORM</text>
+  <g filter="url(#sl75-sh)">
+    <rect x="248" y="358" width="524" height="102" rx="16" fill="url(#sl75-db)" stroke="#2f6f4f" stroke-width="2.5"/>
+    <rect x="248" y="358" width="7" height="102" rx="3" fill="#2f6f4f" opacity="0.75"/>
+    <circle cx="278" cy="409" r="16" fill="rgba(47,111,79,0.15)" stroke="#2f6f4f" stroke-width="2"/>
+    <text x="278" y="415" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="12" font-weight="700" fill="#0d2b45">3</text>
+    <text x="310" y="386" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0d2b45">Database</text>
+    <text x="310" y="408" font-family="Segoe UI, system-ui, sans-serif" font-size="10.5" fill="#4a5568">Relational data: tables, rows, columns, constraints (DBMS)</text>
+    <text x="310" y="430" font-family="Segoe UI, system-ui, sans-serif" font-size="9.5" fill="#2f6f4f" font-weight="600">QA: integrity, SQL checks, reconciliation, reports</text>
+    <ellipse cx="700" cy="404" rx="52" ry="28" fill="rgba(47,111,79,0.08)" stroke="#2f6f4f" stroke-width="1.5"/>
+    <text x="700" y="400" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8" font-weight="700" fill="#0d2b45">DBMS</text>
+    <text x="700" y="412" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="7" fill="#718096">e.g. Oracle, SQL Server, PostgreSQL</text>
+  </g>
+  <rect x="48" y="468" width="704" height="24" rx="6" fill="rgba(13,43,69,0.04)" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="400" y="484" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="8.5" fill="#5a6d7e">Each layer can hide defects - tests prove behaviour and data match requirements across the stack.</text>
+</svg>
