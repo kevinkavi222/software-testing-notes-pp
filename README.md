@@ -17,20 +17,20 @@ Helper scripts (`_patch_layer_svg.py`, `_read_pptx8.py`) are optional tooling fo
 
 1. On [GitHub](https://github.com/new), create a **new repository** (any name, e.g. `software-testing-notes-pp`). Do **not** add a README or `.gitignore` there (this folder already has them).
 
-2. In a terminal **in this folder**, run (replace `YOUR_USER` and `REPO_NAME`):
+2. In a terminal **in this folder**, run:
 
 ```bash
-git remote add origin https://github.com/YOUR_USER/REPO_NAME.git
+git remote add origin https://github.com/kevinkavi222/software-testing-notes-pp.git
 git push -u origin main
 ```
 
-Use SSH instead if you prefer: `git@github.com:YOUR_USER/REPO_NAME.git`
+Use SSH instead if you prefer: `git@github.com:kevinkavi222/software-testing-notes-pp.git`
 
 ## Clone and continue on another machine
 
 ```bash
-git clone https://github.com/YOUR_USER/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/kevinkavi222/software-testing-notes-pp.git
+cd software-testing-notes-pp
 ```
 
 Then edit in Cursor, VS Code, or GitHub’s web editor; commit and push as usual.
