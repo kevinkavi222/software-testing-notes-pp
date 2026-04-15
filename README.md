@@ -13,11 +13,24 @@ Static HTML slide decks and presenter notes for a software testing course. Open 
 
 Helper scripts (`_patch_layer_svg.py`, `_read_pptx8.py`) are optional tooling for maintenance.
 
+## Push this folder to a new GitHub repository
+
+1. On [GitHub](https://github.com/new), create a **new repository** (any name, e.g. `software-testing-notes-pp`). Do **not** add a README or `.gitignore` there (this folder already has them).
+
+2. In a terminal **in this folder**, run (replace `YOUR_USER` and `REPO_NAME`):
+
+```bash
+git remote add origin https://github.com/YOUR_USER/REPO_NAME.git
+git push -u origin main
+```
+
+Use SSH instead if you prefer: `git@github.com:YOUR_USER/REPO_NAME.git`
+
 ## Clone and continue on another machine
 
 ```bash
-git clone <your-repo-url>
-cd software-testing-notes-pp
+git clone https://github.com/YOUR_USER/REPO_NAME.git
+cd REPO_NAME
 ```
 
 Then edit in Cursor, VS Code, or GitHub’s web editor; commit and push as usual.
