@@ -3038,7 +3038,7 @@
               </div>
             </div>
           </div>
-          <p class="presenter-note-bottom">Presenter note: This is where we get into software testing properly — from here the course stays on <strong>Agile / Scrum</strong>; Waterfall and the V-model remain prior context only. We do not continue covering other methodologies in depth.</p>
+          <p class="presenter-note-bottom">Presenter note: <strong>UAT</strong> — business or end users run realistic scenarios before go-live to answer “can we <strong>accept</strong> this for real use?” (beyond internal QA sign-off). <strong>Levels:</strong> unit (one function/module), integration (parts talking), system (whole app end-to-end), acceptance/UAT (business scenarios). <strong>Types:</strong> functional (does it do the right thing?), performance (speed under load), security, penetration (attack-style probing). From here the course stays on <strong>Agile / Scrum</strong>; Waterfall and the V-model are background only.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3089,7 +3089,7 @@
               </div>
             </div>
           </div>
-          <p class="presenter-note-bottom">Presenter note: Keep it simple: testing checks the product against agreed behaviour, turns problems into tracked defects, and closes the loop with retest and regression. Stay on <strong>Agile / Scrum</strong> — stories, sprints, and ongoing testing — for every example from here.</p>
+          <p class="presenter-note-bottom">Presenter note: Call back to what students already covered: <strong>requirements</strong> — both high-level business needs and detailed <strong>functional specifications</strong>. Up to now that was “what we agreed on paper.” <strong>Testing</strong> is how we <strong>verify in practice</strong> that <strong>actual outcomes</strong> match those requirements (and user stories): exercise the product, compare expected vs actual, log defects, retest, and regress. Frame examples in <strong>Agile / Scrum</strong> throughout.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3117,7 +3117,7 @@
               </ul>
             </div>
           </div>
-          <p class="presenter-note-bottom">Presenter note: Bottom line: the job is to show the product matches agreed requirements; this slide maps that work to <strong>three places</strong> — UI, servers, and data. In <strong>Agile / Scrum</strong>, tie examples to stories and sprint increments (what ships to users each iteration). The next slides unpack each layer.</p>
+          <p class="presenter-note-bottom">Presenter note: Keep it simple: the <strong>main goal</strong> of testing is to <strong>find defects</strong> — bugs, gaps, or behaviour that <strong>does not match the requirements</strong>. This slide just shows <strong>where</strong> those mismatches can appear: <strong>UI</strong>, <strong>servers</strong>, or <strong>data</strong>. Remind them: you already saw what a <strong>server</strong> does — it <strong>stores and processes application data</strong>; defects on this layer are things like wrong business logic, wrong API responses, or mishandled data. (<strong>ISTQB</strong> often asks about objectives and test levels; treat this as a heads-up — we will revisit exam-style angles later.)</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3333,7 +3333,7 @@
               </ul>
             </div>
           </div>
-          <p class="presenter-note-bottom">Presenter note: Three simple buckets: <strong>app, data, helpers.</strong> Many people use the same app; different computers do different jobs. Students don’t need every tech name — only <strong>why</strong> the work is split.</p>
+          <p class="presenter-note-bottom">Presenter note: Students see <strong>one</strong> app in the browser; behind it is often <strong>several computers</strong>, each with a job.<br><br><strong>App server</strong> — runs the program and <strong>business rules</strong> (e.g. what happens when you click “Pay”). <strong>Database server</strong> — keeps <strong>stored data</strong> (tables the app reads and writes). <strong>Helpers</strong> — things like site naming (DNS), email, or shared files so the main app is not doing everything. <strong>Why split?</strong> Scale, reliability, and maintenance — and so testers know <strong>which layer</strong> to investigate when something breaks. No vendor names required — only <strong>which role</strong> each server plays.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3356,6 +3356,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Tables / rows / columns</strong> — the “source of truth” for stored data. <strong>DBMS</strong> is the gatekeeper; next slide, <strong>SQL</strong> is how testers read that data and compare it to the UI.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3378,6 +3379,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>SQL</strong> talks to the database — select, insert, update, delete. For testers: <strong>prove</strong> what is stored (counts, joins) matches what the UI shows; deeper SQL comes in the dedicated practicals.<br><br>We will run a <strong>small SQL test</strong> in the course to demonstrate this — same idea as <strong>API</strong> testing: you issue a request, get a structured response, and compare it to what you expect.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3400,6 +3402,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC</strong> — <strong>Software Testing Life Cycle</strong>: the ordered set of <strong>testing activities</strong> testers follow (alongside development — not the same as SDLC, but aligned with it). The six phases in this course: <strong>1 · Requirement analysis</strong> → <strong>2 · Test planning</strong> → <strong>3 · Test case development</strong> → <strong>4 · Test environment setup</strong> → <strong>5 · Test execution</strong> → <strong>6 · Test closure</strong>. The next slide shows the flow; methodology only changes <em>when</em> and <em>how often</em> you revisit each phase.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3472,6 +3475,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 1</strong> — read and question requirements until they are <strong>clear and testable</strong>; you cannot design good tests from vague specs.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3494,6 +3498,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 2</strong> — decide <strong>how</strong> you will test: scope, strategy, resources, risks, and schedule — the map before you write cases.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3516,6 +3521,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: The <strong>introduction</strong> sets expectations — what this test plan covers and why it exists.<br><br>The <strong>table of contents</strong> is standard for long documents: readers jump straight to scope, approach, criteria, schedule, or risks without scrolling blind.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3538,6 +3544,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>RACI</strong> removes ambiguity — who <strong>does</strong> the work, who <strong>owns</strong> the decision, who gives <strong>input</strong>, who must be <strong>kept in the loop</strong>.<br><br>Maps change by methodology (Agile vs Waterfall), but the plan should still name <strong>accountability</strong> so testing does not fall between roles.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3560,6 +3567,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>In-scope</strong> = what we <strong>will</strong> test for this release, aligned with priorities and requirements.<br><br><strong>Out-of-scope</strong> = what we are <strong>not</strong> covering now (or not at all) — write it down so scope creep and endless “quick checks” stay under control.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3582,6 +3590,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Testing approach</strong> = <strong>how</strong> you will test — levels (e.g. system, regression), methods, and how defects are logged and tracked.<br><br>Stakeholders should leave this section knowing <strong>what evidence of quality</strong> they will get for this release, not just that “testing will happen.”</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3604,6 +3613,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Entry criteria</strong> = what must be true <strong>before</strong> you start (build in test env, data ready, cases prepared, requirements stable enough to test against).<br><br><strong>Exit criteria</strong> = what must be true to say testing is <strong>done</strong> for this scope — e.g. cases run, critical issues fixed and <strong>retested</strong>, agreed defect thresholds met.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3626,6 +3636,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Sometimes you must <strong>stop</strong> testing — e.g. a <strong>blocker</strong> or so many open defects that new runs are meaningless noise.<br><br>Define <strong>when</strong> to pause and <strong>what must be true to resume</strong> so the decision is agreed, not argued under pressure.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3648,6 +3659,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Deliverables</strong> = concrete outputs — e.g. test cases, defect reports, test summary — with <strong>timing</strong> and owners.<br><br>Listing them in the plan avoids “I thought someone else would write the report” and supports <strong>audits</strong> and release sign-off.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3670,6 +3682,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Tasks</strong> break down what testers <strong>do</strong> — design cases, execute, log defects, retest, regression, reporting.<br><br><strong>Resources</strong> = people <strong>and</strong> systems (envs, tools, data); state <strong>N/A</strong> explicitly if something does not apply so nobody assumes it is covered.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3692,6 +3705,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: The <strong>schedule</strong> is often a <strong>separate</strong> file (spreadsheet, Gantt, etc.) that the test plan <strong>references</strong> — dates, owners, milestones.<br><br>Keep it aligned with the <strong>STLC phases</strong> so the team sees what happens when, not just a wall of dates.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3721,6 +3735,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: List risks that could hit testing <strong>before, during, or after</strong> execution — each line should pair a <strong>risk</strong> with a real <strong>contingency</strong> (what you do if it happens).<br><br>Naming a risk without a fallback helps little when deadlines bite — use concrete examples like the slide (skills gap, people unavailable).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3743,6 +3758,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 3</strong> — build the <strong>test record</strong>: scenarios, cases, <strong>expected results</strong>, then <strong>actual</strong> results and Pass/Fail per run.<br><br>Next slides unpack the ladder: <strong>scenario</strong> (broad) → <strong>case</strong> (specific) → <strong>script</strong> (steps).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3765,6 +3781,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: This is where you act as <strong>test analyst</strong> — use techniques from later in the course to design scenarios, cases, and scripts.<br><br>Good questions here often <strong>clarify requirements</strong> early; use the course <strong>test record template</strong> so work stays consistent and reviewable.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3790,6 +3807,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: A <strong>test scenario</strong> is the <strong>big picture</strong> — what should this feature deliver for the user? (Sometimes called a test condition.)<br><br>Stay at <strong>end-user language</strong> first; you break scenarios into detailed <strong>test cases</strong> on the next slide.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3812,6 +3830,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Test cases</strong> add <strong>specifics</strong> — inputs, data, and <strong>expected results</strong> — usually traced to requirements.<br><br>Expect <strong>one scenario → many cases</strong>; that is normal — you are splitting one user goal into checkable pieces.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3835,6 +3854,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: A <strong>test script</strong> is the <strong>step-by-step recipe</strong> to run a case — clicks, data, navigation — so anyone can repeat the same actions.<br><br>If a colleague cannot follow your steps “cold” and see the same result, the script is not clear enough for evidence or handover.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3858,6 +3878,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Every case needs an <strong>expected result</strong> — that is your <strong>objective pass/fail line</strong> against the actual outcome.<br><br>Ground expectations in <strong>requirements</strong> or agreed acceptance text — otherwise “it looks fine” becomes opinion, not evidence.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3913,6 +3934,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Simple analogy: like a <strong>phone number</strong> that belongs to <strong>one person</strong>, each test artefact gets a <strong>clear ID</strong> that chains back to a parent — so nothing is “anonymous.”<br><br><strong>RTM</strong> (traceability) means: from a case ID (e.g. <strong>AB2.1.2</strong>) you can walk <strong>up</strong> to the requirement; from a requirement you can see <strong>all</strong> scenarios and cases that cover it — gaps and audits become obvious.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3935,6 +3957,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 4</strong> — always know <strong>which environment</strong> you are testing (URL, tier, or install); <strong>Dev / Test / UAT / Production</strong> behave differently, and defects must be reported against the <strong>correct</strong> one.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -3985,6 +4008,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: The same <strong>build</strong> is <strong>promoted</strong> along <strong>Dev → Test → UAT → Live</strong> only after each <strong>quality gate</strong> — each box is usually a separate deployment (and often its own database) so defects are caught before real users do.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4026,6 +4050,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Before you trust results, confirm all four: <strong>URL</strong>, <strong>database</strong> for this tier, <strong>test data</strong> in that DB, and any <strong>hardware</strong> — wrong tier or missing data makes passes and fails meaningless.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4086,6 +4111,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 5</strong> — one case at a time: <strong>compare actual to expected</strong>; match → <strong>Pass</strong> with evidence (e.g. screenshot), any difference → <strong>Fail</strong> and log a defect — no guessing.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4140,6 +4166,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Same story in <strong>Jira</strong>, <strong>Azure DevOps</strong>, or similar: <strong>log → triage → fix → retest → closed</strong> — tool UI changes; the hand-offs between tester, team, and developer do not.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4169,6 +4196,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: You will see these fields in more detail when we work through <strong>bug work items in Azure DevOps</strong> — the tracker we use in this course.<br><br>The <strong>principles</strong> are the same as <strong>Jira</strong> and other tools: title, steps, expected vs actual, environment, evidence — only labels and layout change.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4217,6 +4245,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: This is <strong>another way to look at slide 107</strong> — same defect lifecycle, not a different process.<br><br>Slide 107 showed the <strong>straight happy path</strong>; here we <strong>split</strong> what happens after triage (<strong>invalid</strong> → close vs <strong>valid</strong> → fix → deploy → retest).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4311,6 +4340,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 6 (part 1)</strong> — closure means <strong>evidence</strong>: planned cases for this scope are <strong>executed</strong>, and open defects are either <strong>closed</strong> or <strong>deferred with explicit sign-off</strong> (test / project / Scrum lead) — not “we ran out of time.”</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4352,9 +4382,11 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>STLC phase 6 (part 2)</strong> — tie closure to the <strong>test plan</strong>: E2E coverage where planned, <strong>closure/summary reports</strong> to stakeholders, and proof that <strong>entry/exit criteria</strong> for this cycle are met — slide 111 was execution and defects; this slide is <strong>evidence and communication</strong>.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
+    </div>
 
     <div class="slide-wrap">
       <div class="slide-label">Slide 113 — Testing techniques (overview)</div>
@@ -4407,6 +4439,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: From this slide onward we start comparing <strong>different ways</strong> of testing — not only <strong>which technique</strong> (reviews, black-box, etc.) but <strong>how</strong> it is run: <strong>manually</strong> (a person follows cases) vs <strong>automation</strong> / <strong>auto-tests</strong> (scripts and tools repeat checks).<br><br>Use the diagram as a <strong>map</strong>; the following slides unpack each family, with black-box detail first.<br><br>The <strong>Reviews</strong> box lists <strong>walkthrough</strong>, <strong>peer</strong>, <strong>technical</strong>, and <strong>informal</strong> — those review types are <strong>defined on their own slides</strong>: <strong>130</strong> walkthroughs, <strong>131</strong> peer review, <strong>132</strong> technical review, <strong>133</strong> informal review; on slide 113 only point at the names, then send students to that block when you reach it later.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4441,6 +4474,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Link to <strong>manual vs autotest</strong>: <strong>white-box</strong> checks are usually <strong>automated</strong> — unit/API scripts in CI that exercise branches you can see in code (same <strong>withdraw</strong> example: tests for “balance OK” vs “too low” on each side of the <code>if</code>). You might <strong>read code manually</strong> in review, but the repeatable part is typically <strong>autotest</strong>.<br><br>Analogy: <strong>open the hood</strong> — <strong>developers</strong> own most of it; testers still need the idea for <strong>coverage</strong> and pipeline talk.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4480,6 +4514,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Link to <strong>manual vs autotest</strong>: <strong>black-box</strong> is how most <strong>QA</strong> runs — you exercise the app <strong>without reading code</strong>, either <strong>manually</strong> (you click through login, checkout, …) or with <strong>automated</strong> UI/API scripts that still treat the system as a <strong>black box</strong> (same checks, tool presses the buttons).<br><br><strong>TV remote</strong> analogy: only <strong>inputs and outputs</strong> matter — that stays true whether a person or a script drives the test.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4521,6 +4556,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: The <strong>spec</strong> says what must be there; each expectation becomes a <strong>test case</strong>. Example: spec lists username, password, Sign-in — you check each one is shown. <strong>Spec line → one check.</strong></p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4554,6 +4590,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Same line as slide <strong>116</strong>: the <strong>spec</strong> also says what happens when input is <strong>invalid</strong>; each rule becomes a <strong>test case</strong>. Example: wrong password or username → denied, no crash. <strong>Bad input → safe outcome.</strong></p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4598,6 +4635,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Picture a real flow: <strong>Home</strong> → click <strong>Login</strong> → <strong>Credentials</strong> (enter user/password) → <strong>Account page</strong>. A <strong>wrong</strong> transition skips a step — e.g. <strong>Home</strong> → <strong>Login</strong> → <strong>Account page</strong> with no credentials screen; the app should refuse that, not land you logged in. <strong>Valid chain vs illegal shortcut.</strong></p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4648,6 +4686,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Same idea as slide <strong>118</strong> — another domain example (ATM states and transitions), nothing new conceptually.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4684,6 +4723,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: For students: many bugs sit at the <strong>cut-off</strong> numbers — smallest OK, largest OK, and the number <strong>just before</strong> and <strong>just after</strong> the allowed range. You are <strong>not</strong> testing every value; you test these few “edge” places. Always check the spec: is the limit <strong>included</strong> or <strong>not included</strong>?</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4716,6 +4756,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Same idea as slide <strong>120</strong>, but with <strong>age</strong>. Think in plain buckets: <strong>too young</strong>, <strong>allowed ages</strong>, <strong>too old</strong>. Then pick ages <strong>next to the lines</strong> — for example just under 18, 18, just under 101, 101 — instead of testing every year.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4750,6 +4791,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: For students: put similar inputs in the <strong>same box</strong> if the app should react the <strong>same way</strong>. From each box, pick <strong>one or two</strong> example tests — not hundreds. Between boxes, use the <strong>edge tests</strong> from slide <strong>120</strong> on the lines where the answer changes.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4783,6 +4825,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Three simple boxes: <strong>too young</strong>, <strong>OK age</strong>, <strong>too old</strong>. One test inside each box shows the three different outcomes. On an exam, use the <strong>ages written in the question</strong> — numbers may differ from this slide — and add boundary tests where the rule switches (e.g. 17 vs 18, 70 vs 71).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4827,6 +4870,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Past experience</strong> and real <strong>use cases</strong> (how people actually use the feature) give you a good hunch <strong>where</strong> bugs may hide — that is what “guessing” really means here, not random clicking.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4862,6 +4906,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Like slide <strong>124</strong>, you start from experience — but <strong>exploring</strong> adds <strong>other</strong> ways things can fail: odd paths, timing, rough UX, surprises not on your list. Keep planned tests; this covers what guessing alone can miss.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4905,6 +4950,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: For students: draw a simple picture — “<strong>if these things are true</strong>” (the causes) “<strong>then this happens</strong>” (the effect). <strong>All</strong> checks must pass together = <strong>AND</strong>; <strong>any one</strong> path is enough = <strong>OR</strong>. It is just a clear way to see the rules before you turn them into tests (see slide <strong>127</strong>).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4943,6 +4989,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Students already know <strong>BVA</strong> and <strong>EP</strong> (slides <strong>120–123</strong>). This is just a <strong>very simple</strong> age example in another shape: the picture from slide <strong>126</strong> written as plain rules — each line (<strong>if age is… then screen is…</strong>) is one test. Nothing harder; same numbers, clearer table.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -4984,6 +5031,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Same kind of <strong>flow</strong> you have met before: tester sees it <strong>does not work</strong> → <strong>reports</strong> it for fixing → after the fix, <strong>retest</strong> the same case to prove it now <strong>works</strong> and matches the <strong>requirement / spec</strong>. Simple loop; slide <strong>143</strong> names the wider “what else broke?” check (<strong>regression</strong>).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5017,6 +5065,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Simple way to think of it: <strong>“Does it start?”</strong> — like checking the car runs before a long trip. You run only a <strong>few</strong> must-work flows (e.g. open app, login, main path). Often this quick pass is <strong>mostly done by developers</strong> (or in CI) before QA spends time on it. If that fails, the build is not worth deep testing yet — fix first. (On slide <strong>139</strong>, “smoke” means a <strong>speed</strong> sniff test — different idea.)</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5055,6 +5104,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Walkthrough</strong> — usually <strong>led by the BA, product owner, or document author</strong>; <strong>QA, developers, BA, test lead</strong>, and others <strong>join</strong> to listen and ask questions. <strong>Exam:</strong> often “who takes part?” — many roles participate; one person <strong>presents</strong> the document.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5090,6 +5140,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Peer review</strong> — done by <strong>testers only</strong>: the <strong>author (tester)</strong> and a <strong>peer reviewer (another tester)</strong> on test plans, scripts, or records before run. <strong>Exam:</strong> “who reviews?” — <strong>peers in testing</strong>, not developers reviewing code here.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5131,6 +5182,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Technical review</strong> — usually led or driven by <strong>technical roles</strong> (<strong>architect</strong>, <strong>designers</strong>, senior <strong>developers</strong>) with <strong>QA</strong> and <strong>BA</strong> joining to check the <strong>technical design</strong> before code. <strong>Exam:</strong> “who checks architecture / technical solution?” — <strong>technical experts</strong>, not a tester-only meeting.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5168,6 +5220,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>Informal review</strong> — usually just <strong>two people</strong> (<strong>author + colleague</strong>; can be tester–tester or mixed roles) skim a <strong>draft</strong> in minutes. <strong>Exam:</strong> contrast with walkthrough (<strong>130</strong>) — <strong>informal, no big agenda</strong>, while the document is still changing.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5212,6 +5265,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: From slide <strong>134</strong> onward we cover <strong>non-functional</strong> testing — a <strong>deeper</strong> layer than “does the feature work?” Functional checks match behaviour to the spec; non-functional asks <strong>how well</strong> that behaviour holds up: <strong>how secure</strong>, <strong>how fast</strong>, <strong>how much</strong> it can handle at once, how stable under load, and similar “quality in use” questions. Slides <strong>135–141</strong> each name one slice of that.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5248,6 +5302,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Same non-functional line as slide <strong>134</strong>: not “does login work?” but <strong>how safe</strong> from attack or misuse (<strong>security</strong>) and <strong>how dependable</strong> it stays over time (<strong>reliability</strong>).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5282,6 +5337,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Still “how well” (slide <strong>134</strong>): <strong>recovery</strong> — how well the service <strong>comes back</strong> after a failure; <strong>availability</strong> — how <strong>present</strong> it is for users (uptime), not whether a single feature path passes once.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5316,6 +5372,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Non-functional “how well”: <strong>usability</strong> — how <strong>easy and clear</strong> the feature is for real people; <strong>scalability</strong> — whether it stays acceptable when <strong>users or data grow</strong> (ties to performance slides <strong>139–141</strong>).</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5354,6 +5411,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Classic “how well” measures: <strong>response time</strong> — how <strong>long</strong> one action takes; <strong>throughput</strong> — how <strong>much work per second</strong> when the system is busy — both about performance quality, not whether the function exists.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5411,6 +5469,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Performance angle on “how much can it handle”: <strong>performance smoke</strong> — light load, “does it still respond?”; <strong>load</strong> — ramp to <strong>expected busy</strong> levels and check limits. (Slide <strong>129</strong> smoke is <strong>functional</strong>; this slide is <strong>speed/capacity</strong>.) Next slide pushes past normal limits.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5477,6 +5536,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Still asking <strong>how much</strong> the system can take, not “correct or wrong” logic: <strong>stress</strong> — keep raising load past the design ceiling; <strong>spike</strong> — a sudden burst then back down — to see if quality holds under extremes.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5532,6 +5592,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: <strong>How well</strong> the system runs over <strong>many hours</strong> at steady load — leaks, slowdowns — not a one-off functional check. Same non-functional mindset as slide <strong>134</strong>, but the risk shows up only after time. Contrast slide <strong>140</strong>: here load stays flat; clock moves forward.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5571,6 +5632,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Production never stops changing — <strong>maintenance</strong> tests are <strong>risk-based</strong>: match depth to the change (hotfix vs migration). Tie to slide <strong>143</strong>: often a <strong>regression</strong> slice plus targeted checks, not the whole suite every time.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
@@ -5609,6 +5671,7 @@
               </div>
             </div>
           </div>
+          <p class="presenter-note-bottom">Presenter note: Close the loop with slide <strong>128</strong>. In practice: <strong>retest</strong> the failing case, then run the agreed <strong>regression</strong> set (often mostly <strong>CI</strong> automation). Interview tip: mixing these terms is a common red flag — fix the vocabulary.</p>
         </div>
         <img class="logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Company logo" width="120" height="48" />
       </div>
