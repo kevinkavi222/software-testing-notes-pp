@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complete Software Testing Programme — Instructor Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d2b45;
+      --navy-deep: #081c2e;
+      --muted: #3d5566;
+      --brand-gold: #b8943d;
+      --gold-soft: #d4b56a;
+      --page-bg: #f4f8fb;
+      --line: #c5d4df;
+      --white: #ffffff;
+      --ok: #1f6b4a;
+      --warn: #8a5a12;
+    }
+    * { box-sizing: border-box; }
+    @page { size: A4; margin: 0; }
+    body {
+      margin: 0;
+      background: #d7e0e8;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--navy);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .screen-chrome { max-width: 820px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
+    .screen-chrome h1.doc-title {
+      margin: 0 0 0.35rem; font-size: 0.95rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: center;
+    }
+    .screen-chrome .doc-hint { text-align: center; color: var(--muted); font-size: 0.85rem; margin: 0 0 1.25rem; }
+    .page {
+      width: 210mm; min-height: 297mm; margin: 0 auto 1.25rem;
+      background: var(--page-bg);
+      background-image: url("assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Student_Area_Background-b14f0737-cfc2-4eb5-828f-a8db74f6f05a.png");
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+      box-shadow: 0 14px 40px rgba(13, 43, 69, 0.18);
+    }
+    .page-inner {
+      position: relative; min-height: 297mm;
+      padding: 14mm 16mm 22mm; display: flex; flex-direction: column;
+    }
+    .page-header {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+      margin-bottom: 6mm; padding-bottom: 3.5mm;
+      border-bottom: 2px solid rgba(184, 148, 61, 0.45);
+    }
+    .page-header .brand-line {
+      margin: 0; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .page-header .doc-line { margin: 0.2rem 0 0; font-size: 0.78rem; color: var(--navy); font-weight: 600; }
+    .page-header .page-num { font-size: 0.72rem; color: var(--muted); white-space: nowrap; padding-top: 0.15rem; }
+    .page-title {
+      margin: 0 0 4mm; font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.55rem; font-weight: 700; color: var(--navy); line-height: 1.15;
+    }
+    .page-title::after {
+      content: ""; display: block; width: 42px; height: 3px; margin-top: 3mm; background: var(--brand-gold);
+    }
+    .page-footer {
+      position: absolute; left: 16mm; right: 16mm; bottom: 8mm;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.68rem; color: var(--muted);
+      border-top: 1px solid var(--line); padding-top: 2.5mm;
+    }
+    .page-footer img { height: 20px; width: auto; object-fit: contain; }
+    .lead { margin: 0 0 4mm; font-size: 0.92rem; color: var(--muted); line-height: 1.45; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+    .panel, .card {
+      background: rgba(255,255,255,0.86); border: 1px solid var(--line); padding: 4mm 4.5mm;
+    }
+    .panel.full { margin-top: 4mm; }
+    .panel h3, .card h3 {
+      margin: 0 0 2.5mm; font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1rem; color: var(--navy); padding-bottom: 2mm;
+      border-bottom: 2px solid var(--brand-gold);
+    }
+    .card h3 { font-size: 0.95rem; }
+    .panel ul, .card ul, .panel ol, .card ol { margin: 0; padding-left: 4.5mm; font-size: 0.84rem; line-height: 1.45; }
+    .panel li, .card li { margin: 1mm 0; }
+    .panel p, .card p { margin: 0 0 2mm; font-size: 0.84rem; line-height: 1.45; }
+    .small { font-size: 0.78rem !important; color: var(--muted); }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 2mm; margin: 0 0 4mm;
+    }
+    .meta span {
+      background: rgba(13,43,69,0.08); border: 1px solid var(--line);
+      padding: 1.2mm 2.8mm; font-size: 0.72rem; font-weight: 600; color: var(--navy);
+    }
+    .callout {
+      margin-top: 4mm; padding: 3.5mm 4mm; background: rgba(255,250,240,0.95);
+      border-left: 4px solid var(--brand-gold); font-size: 0.84rem; line-height: 1.45;
+    }
+    .callout.warn { background: rgba(255,244,230,0.95); border-left-color: var(--warn); }
+    table.map {
+      width: 100%; border-collapse: collapse; font-size: 0.78rem;
+      background: rgba(255,255,255,0.88);
+    }
+    table.map th, table.map td {
+      border: 1px solid var(--line); padding: 2.4mm 2.8mm; text-align: left; vertical-align: top;
+    }
+    table.map th { background: rgba(13,43,69,0.08); font-weight: 700; }
+    .chip-row { display: flex; flex-direction: column; gap: 2.5mm; }
+    .chip {
+      display: block; font-size: 0.8rem; line-height: 1.4; padding: 2.5mm 3mm;
+      background: rgba(13,43,69,0.05); border: 1px solid var(--line);
+    }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+    .check-item {
+      display: flex; gap: 3mm; align-items: flex-start;
+      background: rgba(255,255,255,0.86); border: 1px solid var(--line);
+      padding: 3mm 3.5mm; font-size: 0.82rem; font-weight: 600; line-height: 1.35;
+    }
+    .check-mark {
+      flex: 0 0 auto; min-width: 1.2rem; height: 1.2rem; border-radius: 50%;
+      background: var(--ok); color: #fff; font-size: 0.68rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; margin-top: 0.1rem; padding: 0 0.2rem;
+    }
+    .end-panel { margin-top: 5mm; border-left: 4px solid var(--brand-gold); }
+    /* Cover */
+    .page.cover { background-color: var(--navy-deep); }
+    .page.cover::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(8,28,46,0.72) 0%, rgba(13,43,69,0.55) 45%, rgba(8,28,46,0.78) 100%),
+        url("assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Student_Area_Background-b14f0737-cfc2-4eb5-828f-a8db74f6f05a.png");
+      background-size: cover; background-position: center;
+    }
+    .cover-inner {
+      position: absolute; inset: 0; padding: 18mm; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center; color: var(--white); z-index: 1;
+    }
+    .cover-logo { width: 118px; height: auto; margin-bottom: 10mm; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35)); }
+    .cover-eyebrow { margin: 0 0 4mm; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-soft); }
+    .cover-title { margin: 0; font-family: "Source Serif 4", Georgia, serif; font-size: 2.45rem; font-weight: 700; line-height: 1.12; max-width: 16ch; }
+    .cover-tagline { margin: 6mm 0 0; font-size: 1.3rem; font-weight: 500; color: rgba(255,255,255,0.92); font-style: italic; }
+    .cover-rule { width: 56px; height: 3px; background: var(--brand-gold); margin: 8mm auto 0; border: 0; }
+    .cover-doc { margin: 7mm 0 0; font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.78); }
+    .cover-bottom { position: absolute; left: 18mm; right: 18mm; bottom: 14mm; text-align: center; color: rgba(255,255,255,0.72); font-size: 0.82rem; z-index: 1; }
+    code { font-family: ui-monospace, Consolas, monospace; font-size: 0.78em; background: rgba(13,43,69,0.06); padding: 0.05em 0.3em; }
+    @media print {
+      body { background: #fff; }
+      .screen-chrome { max-width: none; margin: 0; padding: 0; }
+      .screen-chrome h1.doc-title, .screen-chrome .doc-hint { display: none !important; }
+      .page {
+        width: 210mm; min-height: 297mm; margin: 0; box-shadow: none;
+        page-break-after: always; break-after: page;
+      }
+      .page:last-child { page-break-after: auto; break-after: auto; }
+    }
+</style>
+</head>
+<body>
+  <div class="screen-chrome">
+    <h1 class="doc-title">Instructor Guide</h1>
+    <p class="doc-hint">Muchuo’s Centre for Training &amp; Development — Complete Software Testing Programme</p>
+
+    <section class="page cover" aria-label="Page 1 — Cover">
+      <div class="cover-inner">
+        <img class="cover-logo" src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="Muchuo’s Centre Logo" />
+        <p class="cover-eyebrow">Muchuo’s Centre for Training &amp; Development</p>
+        <h1 class="cover-title">Complete Software Testing Programme</h1>
+        <p class="cover-tagline">“From Beginner to Job Ready”</p>
+        <hr class="cover-rule" />
+        <p class="cover-doc">Instructor Guide</p>
+      </div>
+      <p class="cover-bottom">Facilitation · Labs · ISTQB Fridays · Career Coaching</p>
+    </section>
+    <section class="page" aria-label="Page 2 — How to use this guide">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 2</p>
+        </div>
+        <h2 class="page-title">How to use this guide</h2>
+        
+        <p class="lead">This handbook is the teaching companion to the Student Programme Guide, the Complete Course slide deck, and the Presenters Guide. Use it session-by-session from introduction through practicals and CV coaching.</p>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Companion materials</h3>
+            <ul>
+              <li><strong>Student Programme Guide</strong> — share with learners (journey, tools, outcomes).</li>
+              <li><strong>Course Preview</strong> — learner-facing slides.</li>
+              <li><strong>Presenters Guide</strong> — same slides with bottom presenter notes (theory spine, slides 1–144).</li>
+              <li><strong>This Instructor Guide</strong> — pacing, lab runbooks, ISTQB Fridays, CV coaching, sign-off.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>How each phase page is organised</h3>
+            <ul>
+              <li><strong>Intent</strong> — what learners must leave knowing or able to do.</li>
+              <li><strong>Source slides / notes</strong> — where to teach from.</li>
+              <li><strong>Session flow</strong> — teach → demo → practice → check.</li>
+              <li><strong>Talking points</strong> — compressed summary from the course manual &amp; notes.</li>
+              <li><strong>Lab / homework</strong> — practical evidence to collect.</li>
+              <li><strong>Pitfalls</strong> — common learner blockers.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Delivery model:</strong> 12–16 weeks · ~2 hrs daily self-study · Sat–Sun live (2–4 hrs) · Friday ISTQB classes · online tutor support. Theory from the slide deck first; practicals (Postman, Azure DevOps, Visual Studio frameworks) once STLC and techniques are secure.
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 3 — Programme map for instructors">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 3</p>
+        </div>
+        <h2 class="page-title">Programme map for instructors</h2>
+        
+        <p class="lead">Align every live class to the nine-phase student journey. Theory slides currently cover Phase 1 deeply; Phases 2–9 are delivered as instructor-led labs using this guide.</p>
+        <table class="map">
+          <thead>
+            <tr><th>Phase</th><th>Focus</th><th>Primary teaching source</th><th>Live emphasis</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Fundamentals</td><td>Slides 1–144 + presenter notes</td><td>Concepts, vocabulary, ISTQB hooks</td></tr>
+            <tr><td>2</td><td>Manual UI</td><td>STLC slides + this lab runbook</td><td>Azure DevOps: story → case → bug → retest</td></tr>
+            <tr><td>3</td><td>Manual API</td><td>Layers / networking slides + lab</td><td>Postman &amp; Swagger on REST APIs</td></tr>
+            <tr><td>4</td><td>ISTQB CTFL</td><td>ISTQB summary notes (this guide) + Friday mocks</td><td>Parallel with Phases 2–3</td></tr>
+            <tr><td>5</td><td>SQL</td><td>DB / SQL slides + exercises</td><td>Validate data behind UI/API</td></tr>
+            <tr><td>6</td><td>Automation UI &amp; API</td><td>Practical runbooks</td><td>VS + NuGet: Selenium / Reqnroll / RestSharp</td></tr>
+            <tr><td>7</td><td>Mobile</td><td>Overview + demo lab</td><td>Maestro / Appium orientation</td></tr>
+            <tr><td>8</td><td>CI/CD</td><td>Pipeline lab</td><td>ADO / GitHub Actions running tests</td></tr>
+            <tr><td>9</td><td>Career</td><td>CV coaching pages</td><td>CV, LinkedIn, mocks, portfolio</td></tr>
+          </tbody>
+        </table>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 4 — Instructor prep checklist">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 4</p>
+        </div>
+        <h2 class="page-title">Instructor prep checklist</h2>
+        
+        <div class="two-col">
+          <div class="panel">
+            <h3>Accounts &amp; access (before week 1)</h3>
+            <ul>
+              <li>Microsoft / Azure DevOps org + sample project with User Stories</li>
+              <li>Postman workspace (team or classroom) + sample public API (e.g. ReqRes / Swagger Petstore)</li>
+              <li>GitHub org or classroom repos for UI &amp; API automation starter solutions</li>
+              <li>Shared drive for evidence: screenshots, exports, CVs</li>
+              <li>ISTQB CTFL syllabus PDF + mock exam packs for Fridays</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Software learners must install</h3>
+            <ul>
+              <li><strong>Visual Studio</strong> (Community) with .NET desktop / ASP.NET workloads</li>
+              <li>Git + GitHub Desktop or CLI</li>
+              <li>Postman desktop</li>
+              <li>Chrome / Edge (for Selenium WebDriver)</li>
+              <li>Optional: Rider, Android Studio / emulator for mobile phase</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel full">
+          <h3>NuGet packages (Phase 6 starter kits)</h3>
+          <div class="chip-row">
+            <span class="chip">UI: Selenium.WebDriver · Selenium.Support · DotNetSeleniumExtras.WaitHelpers · Reqnroll / SpecFlow · NUnit or xUnit · FluentAssertions · ExtentReports or similar</span>
+            <span class="chip">API: RestSharp · Newtonsoft.Json or System.Text.Json · NUnit/xUnit · FluentAssertions · Reqnroll (optional BDD)</span>
+          </div>
+          <p class="small">Pre-build two Visual Studio solution templates (UI Automation Framework + API Automation Framework) so live time is spent on design patterns, not package restore fights.</p>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 5 — Opening sessions — Intro &amp; mindset">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 5</p>
+        </div>
+        <h2 class="page-title">Opening sessions — Intro &amp; mindset</h2>
+        
+        <div class="meta"><span>Slides 1–6</span><span>Live: 45–60 min</span><span>Outcome: trust, commitment, map of the journey</span></div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Intent</h3>
+            <p>Introduce the instructor, set belief/mindset, and walk the course outline so learners see theory → Postman → Azure DevOps → VS automation → ISTQB → CV.</p>
+          </div>
+          <div class="card">
+            <h3>Session flow</h3>
+            <ol>
+              <li>Title &amp; instructor intro (Slide 1–2).</li>
+              <li>Belief System: fear → understanding; consistency (Slides 3–4).</li>
+              <li>Outline part A &amp; B (Slides 5–6) — pause on practicals and career.</li>
+              <li>Show Student Programme Guide Phases 1–9 on screen.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>Talking points (summary)</h3>
+            <ul>
+              <li>Non-IT backgrounds are expected; testing is learned step by step.</li>
+              <li>Everyone in tech started at zero; commitment beats talent myths.</li>
+              <li>Outline promises: foundations, manual UI/API, Postman/Swagger, ADO test management, Selenium/RestSharp/BDD, CI/CD, ISTQB + CV.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout warn"><strong>Pitfall:</strong> Do not deep-dive tools on day one. Plant the destination, then earn it through fundamentals.</div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 6 — Phase 1A — Systems foundations">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 6</p>
+        </div>
+        <h2 class="page-title">Phase 1A — Systems foundations</h2>
+        
+        <div class="meta"><span>Slides 7–18</span><span>1–2 live blocks</span><span>Computer, binary, hardware/software, networks</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Intent</h3>
+            <p>Give non-technical learners a shared vocabulary: computers, binary, software types, client–server communication. This underpins later API and environment talks.</p>
+            <h3>Checks for understanding</h3>
+            <ul>
+              <li>Name hardware vs software with one everyday example each.</li>
+              <li>Explain (simply) how a phone reaches a server.</li>
+              <li>Why testers care about networks/APIs (failure location).</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Summary notes for teaching</h3>
+            <ul>
+              <li>Binary is how machines represent data — testers meet it as encodings, flags, and “odd” stored values.</li>
+              <li>Software types (system vs application) frame what we test.</li>
+              <li>Client → network → server is the mental model for UI vs API failures (presenter note on Slide 17).</li>
+              <li>Use the network-devices diagram (Slide 18) as a slow walkthrough, not a rush.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><strong>ISTQB hook:</strong> Plant the idea that defects can sit in interface, logic, or data — revisited on objectives / layers slides.</div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 7 — Phase 1B — Waterfall &amp; requirements">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 7</p>
+        </div>
+        <h2 class="page-title">Phase 1B — Waterfall &amp; requirements</h2>
+        
+        <div class="meta"><span>Slides 19–44</span><span>1–2 live blocks</span><span>BRD / FRS, design, build, test, deploy, maintain</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Session flow</h3>
+            <ol>
+              <li>Methodologies list — focus Waterfall, V-Model, Agile (Slide 20 note).</li>
+              <li>Waterfall cascade — same stages exist in every method; order/overlap change.</li>
+              <li>BRD vs FRS with login / e-commerce examples from presenter notes.</li>
+              <li>Design → development → system test → deploy (Azure focus) → ops.</li>
+              <li>Close on Waterfall advantages vs challenges → why Agile emerged.</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>Summary notes</h3>
+            <ul>
+              <li><strong>BRD</strong> = business view; <strong>FRS</strong> = testable detail (fields, rules, messages).</li>
+              <li>Testing should start when documents exist — not only at “System Test” box (Slide 36 note).</li>
+              <li>Cite real failure cost (e.g. Knight Capital) for “why testing matters”.</li>
+              <li>Cloud for this course = Microsoft Azure.</li>
+            </ul>
+            <h3>Homework</h3>
+            <p>Learners write 5 BRD-level bullets and 5 FRS-level bullets for a “Forgot password” feature.</p>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 8 — Phase 1C — Agile &amp; Scrum">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 8</p>
+        </div>
+        <h2 class="page-title">Phase 1C — Agile &amp; Scrum</h2>
+        
+        <div class="meta"><span>Slides 45–62</span><span>1–2 live blocks</span><span>Roles, backlog, sprint ceremonies</span></div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Intent</h3>
+            <p>Learners can describe Epic → Story → Task, name ceremonies, and explain continuous testing inside the sprint.</p>
+          </div>
+          <div class="card">
+            <h3>Talking points</h3>
+            <ul>
+              <li>Agile keeps docs practical; delivery + feedback over late big-bang releases.</li>
+              <li>PO translates user need; Scrum Master removes blockers; Dev team includes testers.</li>
+              <li>Flow: Product backlog → Sprint backlog → ceremonies → tested increment.</li>
+              <li>Key takeaway (Slide 62): testing is continuous, not end-loaded.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Activity (15 min)</h3>
+            <p>In pairs: turn “Online checkout” into 1 Epic, 3 Stories, 2 testing Tasks. Peer critique for testability.</p>
+            <p class="small">Bridge forward: these Stories become Azure DevOps work items in Phase 2.</p>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 9 — Phase 1D — V-Model">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 9</p>
+        </div>
+        <h2 class="page-title">Phase 1D — V-Model</h2>
+        
+        <div class="meta"><span>Slides 63–72</span><span>~1 live block</span><span>Verification &amp; validation pairing</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Summary notes</h3>
+            <ul>
+              <li>Each left-side development stage pairs with a right-side test level.</li>
+              <li>Requirements ↔ Acceptance; System design ↔ System test; Architecture ↔ Integration; Module design ↔ Unit.</li>
+              <li>Coding sits at the bottom; execution climbs the right side.</li>
+              <li>Strength: early test design. Challenge: change cost if requirements shift late.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Teach tip</h3>
+            <p>Draw the V live once. Ask: “If the FRS is wrong, which test level fails first in production impact?” Guide them to acceptance / system, then show how earlier reviews prevent that.</p>
+            <div class="callout"><strong>ISTQB:</strong> V-Model questions often test pairing of levels — drill the pairs every Friday until automatic.</div>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 10 — Phase 1E — Testing intro &amp; layers">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 10</p>
+        </div>
+        <h2 class="page-title">Phase 1E — Testing intro &amp; layers</h2>
+        
+        <div class="meta"><span>Slides 73–81</span><span>~1 live block</span><span>Definition, objectives, UI / server / DB / SQL</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Summary notes (course manual)</h3>
+            <ul>
+              <li>Testing compares actual behaviour to requirements/stories/designs and produces evidence.</li>
+              <li>Find defects → raise clearly → retest until gone.</li>
+              <li>Main objective: software meets user requirements across <strong>UI</strong>, <strong>servers</strong>, and <strong>data</strong>.</li>
+              <li>SQL is how we inspect and validate stored data — preview of Phase 5.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Demo</h3>
+            <p>Open any web app. Point to UI. Open DevTools Network for server/API. Optionally show a table in a DB tool. Say: “Your career will move between these three layers.”</p>
+            <h3>Check</h3>
+            <p>Learners classify three bug examples as UI, server/API, or data.</p>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 11 — Phase 1F — STLC (plan → close)">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 11</p>
+        </div>
+        <h2 class="page-title">Phase 1F — STLC (plan → close)</h2>
+        
+        <div class="meta"><span>Slides 82–112</span><span>2–3 live blocks</span><span>Core manual-testing professional practice</span></div>
+        <div class="panel full">
+          <h3>Session flow (recommended split)</h3>
+          <ol>
+            <li><strong>Block A:</strong> Six STLC phases diagram → Requirement analysis → Test planning (plan contents, RACI, scope, approach, entry/exit, suspension, deliverables, schedule, risks).</li>
+            <li><strong>Block B:</strong> Scenarios → Cases → Scripts → Expected results → RTM.</li>
+            <li><strong>Block C:</strong> Environments (Dev→Live) → Execution Pass/Fail → Bug workflow → Retest / UAT defects → Closure.</li>
+          </ol>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Summary notes</h3>
+            <ul>
+              <li>One scenario → many cases; cases need data + expected results.</li>
+              <li>RTM proves coverage: requirement ↔ cases.</li>
+              <li>Bug loop: log → triage → fix → retest → closed (same in Jira or Azure DevOps).</li>
+              <li>Evidence beats opinion: steps, data, screenshots, environment.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Bridge to Phase 2</h3>
+            <p>Promise: “Next we will do this end-to-end in Azure DevOps — User Story → Test Case → Bug → Retest.” Keep vocabulary identical so the tool feels like paperwork they already understand.</p>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 12 — Phase 1G — Techniques &amp; reviews">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 12</p>
+        </div>
+        <h2 class="page-title">Phase 1G — Techniques &amp; reviews</h2>
+        
+        <div class="meta"><span>Slides 113–133</span><span>2 live blocks</span><span>Black-box techniques + review types</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Summary notes</h3>
+            <ul>
+              <li>Four families: Reviews, Non-functional, White-box, Black-box.</li>
+              <li>Black-box (QA daily): positive/negative, BVA, EP, state transition, error guessing, exploratory, smoke, retesting.</li>
+              <li>BVA: edges and just-inside/outside; EP: one/few from each class.</li>
+              <li>Reviews: walkthrough (author leads, many roles), peer (testers), technical (architects/devs), informal (quick draft skim).</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Classroom drills</h3>
+            <ul>
+              <li>Age rule: derive EP classes + BVA ages (Slides 121–123).</li>
+              <li>ATM / login state diagram: valid vs illegal transitions.</li>
+              <li>Quiz: who leads walkthrough vs peer vs technical (ISTQB favourite).</li>
+            </ul>
+            <div class="callout warn"><strong>Interview trap:</strong> Mixing retesting vs regression — fix vocabulary before Phase 1H closes.</div>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 13 — Phase 1H — Non-functional &amp; maintenance">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 13</p>
+        </div>
+        <h2 class="page-title">Phase 1H — Non-functional &amp; maintenance</h2>
+        
+        <div class="meta"><span>Slides 134–144</span><span>~1 live block</span><span>Quality attributes + regression vocabulary</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Summary notes</h3>
+            <ul>
+              <li>Functional = does it match the spec? Non-functional = how well (secure, fast, stable, usable, scalable).</li>
+              <li>Performance family: smoke (light), load, stress, spike, endurance/soak.</li>
+              <li>Maintenance testing is risk-based after production change.</li>
+              <li><strong>Retest</strong> = same failing case after fix. <strong>Regression</strong> = wider set for side effects.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Close Phase 1</h3>
+            <p>Celebrate vocabulary mastery. Preview practical arc: Azure DevOps UI testing → Postman API → SQL → Visual Studio automation frameworks → CI/CD → CV.</p>
+            <p class="small">Slide 144 “The End” is end of theory deck — not end of programme.</p>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 14 — Phase 2 — Manual UI testing with Azure DevOps">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 14</p>
+        </div>
+        <h2 class="page-title">Phase 2 — Manual UI testing with Azure DevOps</h2>
+        
+        <div class="meta"><span>Practical lab</span><span>2–3 live weekends</span><span>User Story → Test Case → Bug → Retest</span></div>
+        <div class="panel full">
+          <h3>Lab objective</h3>
+          <p>Every learner executes a small UI feature end-to-end in Azure DevOps and produces portfolio evidence (exported cases, bug with attachments, retest result).</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Instructor demo (30–40 min)</h3>
+            <ol>
+              <li>Open ADO project board / Backlog.</li>
+              <li>Create/refine a User Story with acceptance criteria.</li>
+              <li>Create Test Plan / Suite / Cases linked to the story.</li>
+              <li>Run a test → Fail → create Bug with steps, expected vs actual, severity, evidence.</li>
+              <li>Simulate fix → Retest → mark Passed / close bug.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>Learner practice</h3>
+            <ul>
+              <li>App under test: agreed training site (or instructor-hosted demo app).</li>
+              <li>Minimum: 1 story, 8–12 cases (positive + negative + BVA where relevant), 1 bug, 1 retest.</li>
+              <li>Capture screenshots in ticket and in personal portfolio folder.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Sign-off criteria</h3>
+            <ul>
+              <li>Cases are requirement-backed and atomic.</li>
+              <li>Bug is reproducible by a peer without asking questions.</li>
+              <li>Learner can narrate the workflow without reading notes.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><strong>Teaching link:</strong> Reuse STLC language from slides 96–110 so ADO feels familiar. Mention Jira parity (fields differ; process does not).</div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 15 — Phase 3 — Manual API testing with Postman">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 15</p>
+        </div>
+        <h2 class="page-title">Phase 3 — Manual API testing with Postman</h2>
+        
+        <div class="meta"><span>Practical lab</span><span>2 live weekends</span><span>Postman + Swagger / OpenAPI</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Session flow</h3>
+            <ol>
+              <li>Recap client–server &amp; JSON from foundations.</li>
+              <li>Open Swagger/OpenAPI docs — identify resources, verbs, schemas.</li>
+              <li>Postman: collections, environments, variables, auth (API key / Bearer).</li>
+              <li>Send GET/POST/PUT/PATCH/DELETE; read status codes &amp; body.</li>
+              <li>Write test scripts (status, JSON property asserts) — still “manual API” mindset with light scripting.</li>
+              <li>Negative tests: bad auth, missing fields, wrong IDs.</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>Portfolio evidence</h3>
+            <ul>
+              <li>Exported Postman Collection + Environment.</li>
+              <li>Short README: base URL, auth setup, 10+ requests covering CRUD + negatives.</li>
+              <li>2–3 screenshots of failing vs passing assertions.</li>
+            </ul>
+            <h3>Pitfalls</h3>
+            <ul>
+              <li>Learners paste tokens into screenshots — teach redaction.</li>
+              <li>Treating 200 as always success — assert body too.</li>
+              <li>Skipping Swagger and guessing URLs.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 16 — Phase 4 — ISTQB Foundation (Friday classes)">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 16</p>
+        </div>
+        <h2 class="page-title">Phase 4 — ISTQB Foundation (Friday classes)</h2>
+        
+        <div class="meta"><span>Parallel with Phases 2–3</span><span>Every Friday</span><span>CTFL syllabus · mocks · technique</span></div>
+        <div class="panel full">
+          <h3>How to run Fridays</h3>
+          <p>45–90 minutes. Rotate: (1) syllabus teach-back of one chapter, (2) 10–15 MCQs timed, (3) review wrong answers with “why the distractor tempts you”, (4) vocabulary flash (retest vs regression, review types, V-pairs, BVA/EP).</p>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>ISTQB summary map (teach from course notes)</h3>
+            <ul>
+              <li><strong>Fundamentals:</strong> why test, seven principles, test process.</li>
+              <li><strong>Lifecycle:</strong> levels &amp; types; V-Model &amp; Agile testing fit.</li>
+              <li><strong>Static testing:</strong> reviews &amp; roles (walkthrough / peer / technical / informal).</li>
+              <li><strong>Techniques:</strong> black-box (EP, BVA, decision, state), experience-based.</li>
+              <li><strong>Management:</strong> planning, risk, estimation, defects, tools overview.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Link to our deck</h3>
+            <ul>
+              <li>Objectives &amp; layers → principles &amp; object of testing.</li>
+              <li>STLC / plan contents → test management questions.</li>
+              <li>Techniques slides 113–133 → largest exam scoring area.</li>
+              <li>Presenter notes already flag exam angles — reuse them aloud.</li>
+            </ul>
+            <div class="callout"><strong>Target:</strong> learners sit a full mock before Phase 6; aim comfortable pass margin before programme end.</div>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 17 — Phase 5 — SQL for testers">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 17</p>
+        </div>
+        <h2 class="page-title">Phase 5 — SQL for testers</h2>
+        
+        <div class="meta"><span>Slides 80–81 + exercises</span><span>1–2 sessions</span><span>Data validation behind UI/API</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Teach &amp; practice</h3>
+            <ul>
+              <li>SELECT / WHERE / ORDER BY</li>
+              <li>INNER vs LEFT JOIN</li>
+              <li>GROUP BY / COUNT for smoke data checks</li>
+              <li>Compare UI/API response fields to DB rows</li>
+            </ul>
+            <p>Use a tiny sample schema (Users, Orders) so joins are visible.</p>
+          </div>
+          <div class="panel">
+            <h3>Evidence</h3>
+            <ul>
+              <li>Exercise sheet with 8 queries + expected result screenshots.</li>
+              <li>One end-to-end: create via API/UI → SELECT proves persistence.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 18 — Phase 6A — UI automation framework (Visual Studio)">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 18</p>
+        </div>
+        <h2 class="page-title">Phase 6A — UI automation framework (Visual Studio)</h2>
+        
+        <div class="meta"><span>Practical lab</span><span>2–3 weekends</span><span>Selenium · Reqnroll/BDD · NuGet</span></div>
+        <div class="panel full">
+          <h3>Framework shape to teach</h3>
+          <p>Solution folders: <em>Tests</em> (NUnit/xUnit or Reqnroll features) · <em>Pages</em> (Page Object Model) · <em>Core</em> (Driver factory, waits, config) · <em>Utilities</em> (reporting, screenshots). NuGet: Selenium.WebDriver, Selenium.Support, wait helpers, Reqnroll, assertions, reporting.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Live build sequence</h3>
+            <ol>
+              <li>Create NUnit/xUnit test project in Visual Studio.</li>
+              <li>Install NuGet packages; restore; tip: commit <code>packages.lock</code> / use PackageReference.</li>
+              <li>Driver factory (Chrome) + quit in teardown.</li>
+              <li>First raw test (login or search) — then refactor to Page Objects.</li>
+              <li>Add Reqnroll feature file (Given/When/Then) binding to steps.</li>
+              <li>Add screenshot on failure + simple HTML/Extent report.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>Learner outcomes</h3>
+            <ul>
+              <li>Explain POM and why selectors live in pages.</li>
+              <li>Run tests from Test Explorer and command line (<code>dotnet test</code>).</li>
+              <li>At least 5 scenarios automated from earlier manual cases.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Pitfalls</h3>
+            <ul>
+              <li>Brittle absolute XPaths — teach relative + waits.</li>
+              <li>No waits → flaky demos live.</li>
+              <li>Secrets in repo — use user secrets / env vars.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 19 — Phase 6B — API automation framework (Visual Studio)">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 19</p>
+        </div>
+        <h2 class="page-title">Phase 6B — API automation framework (Visual Studio)</h2>
+        
+        <div class="meta"><span>Practical lab</span><span>1–2 weekends</span><span>RestSharp · NuGet · assertions</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Live build sequence</h3>
+            <ol>
+              <li>Create test project; install RestSharp + JSON + NUnit/xUnit + FluentAssertions.</li>
+              <li>Base client wrapper (base URL, auth header, default headers).</li>
+              <li>Model classes for request/response DTOs.</li>
+              <li>Tests: GET list, GET by id, POST create, PUT/PATCH update, DELETE — assert status + payload.</li>
+              <li>Optional: Reqnroll scenarios reusing Postman collection cases.</li>
+              <li>Optional: read config from <code>appsettings.json</code> / environment.</li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>Portfolio evidence</h3>
+            <ul>
+              <li>GitHub repo with README (how to run, packages used).</li>
+              <li>Same business flow covered manually in Postman now automated.</li>
+              <li>Screenshot of Test Explorer green run.</li>
+            </ul>
+            <div class="callout"><strong>Narrative for interviews:</strong> “I designed a C# API framework with RestSharp, covered CRUD + negatives, and mirrored cases from my Postman suite.”</div>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 20 — Phases 7–8 — Mobile &amp; CI/CD">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 20</p>
+        </div>
+        <h2 class="page-title">Phases 7–8 — Mobile &amp; CI/CD</h2>
+        
+        <div class="meta"><span>Orientation + pipeline lab</span><span>1–2 weekends</span><span>Maestro/Appium · ADO / GitHub Actions</span></div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Phase 7 — Mobile (overview depth)</h3>
+            <ul>
+              <li>Show emulator vs real device trade-offs.</li>
+              <li>Demo one Maestro flow or Appium smoke on Android.</li>
+              <li>Learners document differences vs web automation (locators, gestures, resets).</li>
+              <li>Stretch: clone starter mobile framework into portfolio.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Phase 8 — CI/CD</h3>
+            <ol>
+              <li>Push UI or API automation repo to GitHub.</li>
+              <li>Add GitHub Action or Azure Pipeline: restore → <code>dotnet test</code> → publish results.</li>
+              <li>Break a test on purpose; show red build; fix; show green.</li>
+              <li>Discuss gates: when fail should block merge/release.</li>
+            </ol>
+            <p class="small">Tie back to smoke vs regression: pipelines often run smoke every PR and wider suites nightly.</p>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 21 — Phase 9 — CV, LinkedIn &amp; interviews">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 21</p>
+        </div>
+        <h2 class="page-title">Phase 9 — CV, LinkedIn &amp; interviews</h2>
+        
+        <div class="meta"><span>Career preparation</span><span>Final 1–2 weeks (overlap earlier)</span><span>Job-ready packaging</span></div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>CV coaching</h3>
+            <ul>
+              <li>One page (or two max): profile, skills, projects, employment/education.</li>
+              <li>Projects named as outcomes: “Postman suite — 25 requests, auth, negatives”; “Selenium POM + Reqnroll — 12 scenarios”; “RestSharp API framework”; “ADO test management sample”.</li>
+              <li>Ban empty claims (“team player”) without evidence.</li>
+              <li>Instructor reviews each CV once with tracked comments.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>LinkedIn &amp; portfolio</h3>
+            <ul>
+              <li>Headline: Software Tester / QA · Manual + API + Automation.</li>
+              <li>Featured: GitHub repos + PDF Student Guide journey optional.</li>
+              <li>About section mirrors CV projects in first person.</li>
+              <li>Screenshot evidence folders cleaned and linked.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Interview coaching</h3>
+            <ul>
+              <li>Drill: STLC, bug life cycle, BVA/EP, retest vs regression, Agile tester role.</li>
+              <li>Tool stories: narrate ADO and Postman workflows aloud.</li>
+              <li>Framework walkthrough: open VS, explain folders, run one test.</li>
+              <li>At least one timed mock interview per learner.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 22 — Assessment &amp; programme sign-off">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 22</p>
+        </div>
+        <h2 class="page-title">Assessment &amp; programme sign-off</h2>
+        
+        <p class="lead">Use this checklist before marking a learner “programme complete / job-ready packaging done”.</p>
+        <div class="check-grid">
+          <div class="check-item"><span class="check-mark">1</span> Explains SDLC/STLC, Agile ceremonies, V-pairs without slides</div>
+          <div class="check-item"><span class="check-mark">2</span> Designs cases with EP/BVA/negative coverage</div>
+          <div class="check-item"><span class="check-mark">3</span> Azure DevOps: story → cases → bug → retest evidence</div>
+          <div class="check-item"><span class="check-mark">4</span> Postman collection + Swagger-based API tests</div>
+          <div class="check-item"><span class="check-mark">5</span> SQL checks validating UI/API data</div>
+          <div class="check-item"><span class="check-mark">6</span> UI automation framework (VS + Selenium + NuGet) runs cleanly</div>
+          <div class="check-item"><span class="check-mark">7</span> API automation framework (VS + RestSharp + NuGet) runs cleanly</div>
+          <div class="check-item"><span class="check-mark">8</span> CI pipeline executes automated tests</div>
+          <div class="check-item"><span class="check-mark">9</span> ISTQB mock at target score / exam plan set</div>
+          <div class="check-item"><span class="check-mark">10</span> CV + LinkedIn + portfolio reviewed; mock interview done</div>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 23 — Weekend session planner (template)">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 23</p>
+        </div>
+        <h2 class="page-title">Weekend session planner (template)</h2>
+        
+        <p class="lead">Copy this template each week. Keep theory blocks short once practicals start; protect lab time.</p>
+        <table class="map">
+          <thead>
+            <tr><th>Block</th><th>Saturday</th><th>Sunday</th><th>Friday ISTQB</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0–15 min</td><td>Recap + vocabulary quiz</td><td>Homework review</td><td>Warm-up MCQs</td></tr>
+            <tr><td>15–60 min</td><td>Teach / demo (slides or tool)</td><td>Continue lab build</td><td>Syllabus focus topic</td></tr>
+            <tr><td>60–120+ min</td><td>Guided practice</td><td>Independent practice + evidence upload</td><td>Timed quiz + review</td></tr>
+            <tr><td>Close</td><td>Assign homework</td><td>Sign-off / blockers</td><td>Flashcards for weak areas</td></tr>
+          </tbody>
+        </table>
+        <div class="callout"><strong>Instructor habit:</strong> After every live class, note who is blocked on installs, auth tokens, or flaky tests — resolve before next weekend so momentum holds.</div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <section class="page" aria-label="Page 24 — Quick reference — materials &amp; ownership">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 24</p>
+        </div>
+        <h2 class="page-title">Quick reference — materials &amp; ownership</h2>
+        
+        <div class="two-col">
+          <div class="panel">
+            <h3>Document ownership</h3>
+            <ul>
+              <li><strong>Student Programme Guide</strong> — marketing + learner orientation (8 pages).</li>
+              <li><strong>Course Preview / Presenters Guide</strong> — theory spine &amp; presenter notes.</li>
+              <li><strong>Instructor Guide (this file)</strong> — facilitation from intro through practicals and CV.</li>
+              <li><strong>Starter VS solutions</strong> — maintain separately in GitHub; link from README.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Suggested next improvements</h3>
+            <ul>
+              <li>Extend slide deck beyond 144 with Postman / ADO / automation slide modules.</li>
+              <li>Attach printable ISTQB flashcards PDF.</li>
+              <li>Record short lab demos for catch-up learners.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel full end-panel">
+          <h3>Closing note for instructors</h3>
+          <p>Teach vocabulary early, tools second, frameworks third, and career packaging always with evidence. The programme promise is “Beginner to Job Ready” — your job is to leave no phase without a tangible artefact in the learner’s portfolio.</p>
+        </div>
+
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="page" aria-label="Page 25 — ISTQB summary notes A">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 25</p>
+        </div>
+        <h2 class="page-title">Appendix A — ISTQB summary notes (1/2)</h2>
+        <p class="lead">Condensed teach-from notes drawn from the course manual, presenter notes, and CTFL-aligned vocabulary. Use on Fridays and as revision handouts.</p>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Fundamentals</h3>
+            <ul>
+              <li>Testing shows presence of defects, not their absence.</li>
+              <li>Exhaustive testing is impossible — use risk, priorities, techniques.</li>
+              <li>Early testing saves cost; defects cluster; pesticide paradox → refresh tests.</li>
+              <li>Testing is context-dependent; absence-of-errors fallacy (right product still matters).</li>
+              <li>Object of testing: compare behaviour to requirements; produce evidence.</li>
+            </ul>
+            <h3>Test levels (V-pairs)</h3>
+            <ul>
+              <li>Unit ↔ module design</li>
+              <li>Integration ↔ architecture</li>
+              <li>System ↔ system design</li>
+              <li>Acceptance ↔ requirements</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Static testing / reviews</h3>
+            <ul>
+              <li><strong>Walkthrough:</strong> author/BA/PO presents; many roles ask questions.</li>
+              <li><strong>Peer review:</strong> testers review testware.</li>
+              <li><strong>Technical review:</strong> architects/senior devs lead design critique.</li>
+              <li><strong>Informal:</strong> quick two-person draft skim, light process.</li>
+            </ul>
+            <h3>Black-box techniques</h3>
+            <ul>
+              <li><strong>EP:</strong> classes of inputs with same expected behaviour; pick representatives.</li>
+              <li><strong>BVA:</strong> on and just beyond boundaries (inclusive/exclusive per spec).</li>
+              <li><strong>State transition:</strong> valid sequences vs illegal shortcuts.</li>
+              <li><strong>Decision / cause–effect:</strong> combinations of conditions → outcomes.</li>
+              <li><strong>Experience-based:</strong> error guessing + exploratory (chartered).</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="page" aria-label="Page 26 — ISTQB summary notes B">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 26</p>
+        </div>
+        <h2 class="page-title">Appendix A — ISTQB summary notes (2/2)</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Types &amp; vocabulary traps</h3>
+            <ul>
+              <li><strong>Smoke (functional):</strong> build sanity — “does it start?”</li>
+              <li><strong>Retesting:</strong> same failing case after a fix.</li>
+              <li><strong>Regression:</strong> wider set for side effects of a change.</li>
+              <li><strong>Non-functional:</strong> security, reliability, usability, performance (load/stress/spike/soak), availability, recovery.</li>
+              <li>White-box: structure visible (mostly developer unit/CI). Black-box: behaviour from outside (manual or automated).</li>
+            </ul>
+            <h3>Management snippets</h3>
+            <ul>
+              <li>Entry/exit criteria gate phases.</li>
+              <li>Risk-based testing directs depth.</li>
+              <li>Defect report: title, steps, expected vs actual, environment, evidence, severity/priority.</li>
+              <li>Traceability (RTM): requirements ↔ cases ↔ defects.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Friday drill set (rotate)</h3>
+            <ul>
+              <li>10 MCQs timed (12–15 minutes).</li>
+              <li>One worked BVA/EP age or PIN example on whiteboard.</li>
+              <li>Two “who participates?” review questions.</li>
+              <li>One retest vs regression scenario story.</li>
+              <li>Learners write one wrong-answer explanation in their own words.</li>
+            </ul>
+            <div class="callout"><strong>Pass strategy:</strong> vocabulary first, then techniques maths (BVA/EP), then process/management. Weak English readers: practise slow reading of stems — many errors are misread qualifiers (always / only / most).</div>
+          </div>
+        </div>
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="page" aria-label="Page 27 — Practical summary notes">
+      <div class="page-inner">
+        
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme — Instructor Guide</p>
+          </div>
+          <p class="page-num">Page 27</p>
+        </div>
+        <h2 class="page-title">Appendix B — Practical summary notes</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Azure DevOps (UI)</h3>
+            <ul>
+              <li>Story with clear acceptance criteria.</li>
+              <li>Test Plan → Suite → Cases linked to story.</li>
+              <li>Run → Pass/Fail with comment + attachment.</li>
+              <li>Bug from failed run; severity; repro steps.</li>
+              <li>Retest after fix; close when evidence shows pass.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Postman (API)</h3>
+            <ul>
+              <li>Start from Swagger paths &amp; schemas.</li>
+              <li>Environments for baseUrl + tokens.</li>
+              <li>CRUD + auth + negatives.</li>
+              <li>Assert status <em>and</em> body fields.</li>
+              <li>Export collection for portfolio.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>VS automation</h3>
+            <ul>
+              <li><strong>UI:</strong> Selenium + POM + waits + Reqnroll + reporter.</li>
+              <li><strong>API:</strong> RestSharp client wrapper + DTOs + FluentAssertions.</li>
+              <li>NuGet PackageReference; run via Test Explorer / <code>dotnet test</code>.</li>
+              <li>CI: restore → test → publish results.</li>
+              <li>CV line = stack + count of scenarios + repo link.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel full end-panel">
+          <h3>Evidence standard (all practicals)</h3>
+          <p>If a peer cannot reproduce the learner’s result from the artefact alone (repo README, ADO links/screenshots, Postman export), it is not yet portfolio-ready. Coach specificity over screenshots of green ticks with no context.</p>
+        </div>
+        
+        <div class="page-footer">
+          <span>Instructor Guide · Confidential teaching resource</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
