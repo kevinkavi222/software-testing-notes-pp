@@ -9,9 +9,13 @@ Static HTML slide decks and presenter notes for a software testing course. Open 
 | `complete-software-testing-course-preview.html` | Learner-facing slide deck |
 | `complete-software-testing-course-presenters-guide.html` | Same slides + presenter notes at the bottom |
 | `software-testing-course-slides-instructor-template.html` | Instructor template variant |
+| `complete-software-testing-student-programme-guide.html` | Student Programme Guide (print/PDF source) |
+| `complete-software-testing-student-programme-guide.pdf` | Student Programme Guide PDF (8 pages) |
+| `complete-software-testing-instructor-guide.html` | Instructor Guide (facilitation, labs, ISTQB, CV) |
+| `complete-software-testing-instructor-guide.pdf` | Instructor Guide PDF |
 | `assets/` | Images, icons, and diagrams referenced by the HTML |
 
-Helper scripts (`_patch_layer_svg.py`, `_read_pptx8.py`) are optional tooling for maintenance.
+Helper scripts (`_patch_layer_svg.py`, `_read_pptx8.py`, `_export_programme_guide_pdf.sh`, `_export_instructor_guide_pdf.sh`) are optional tooling for maintenance and PDF regeneration.
 
 ## Push this folder to a new GitHub repository
 

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complete Software Testing Programme — Student Programme Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d2b45;
+      --navy-deep: #081c2e;
+      --muted: #3d5566;
+      --brand-gold: #b8943d;
+      --gold-soft: #d4b56a;
+      --page-bg: #f4f8fb;
+      --line: #c5d4df;
+      --white: #ffffff;
+      --ok: #1f6b4a;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      background: #d7e0e8;
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--navy);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .screen-chrome {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2rem;
+    }
+
+    .screen-chrome h1.doc-title {
+      margin: 0 0 0.35rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .screen-chrome .doc-hint {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 1.25rem;
+      background: var(--page-bg);
+      background-image: url("assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Student_Area_Background-b14f0737-cfc2-4eb5-828f-a8db74f6f05a.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(13, 43, 69, 0.18);
+    }
+
+    .page-inner {
+      position: absolute;
+      inset: 0;
+      padding: 14mm 16mm 18mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 8mm;
+      padding-bottom: 4mm;
+      border-bottom: 2px solid rgba(184, 148, 61, 0.45);
+    }
+
+    .page-header .brand-line {
+      margin: 0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .page-header .doc-line {
+      margin: 0.2rem 0 0;
+      font-size: 0.82rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .page-header .page-num {
+      font-size: 0.78rem;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+
+    .page-title {
+      margin: 0 0 5mm;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .page-title::after {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 3px;
+      margin-top: 3.5mm;
+      background: var(--brand-gold);
+    }
+
+    .page-footer {
+      position: absolute;
+      left: 16mm;
+      right: 16mm;
+      bottom: 8mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 2.5mm;
+    }
+
+    .page-footer img {
+      height: 22px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ——— Cover ——— */
+    .page.cover {
+      background-color: var(--navy-deep);
+    }
+
+    .page.cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(8, 28, 46, 0.72) 0%, rgba(13, 43, 69, 0.55) 45%, rgba(8, 28, 46, 0.78) 100%),
+        url("assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Student_Area_Background-b14f0737-cfc2-4eb5-828f-a8db74f6f05a.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cover-inner {
+      position: absolute;
+      inset: 0;
+      padding: 18mm 18mm 16mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      z-index: 1;
+    }
+
+    .cover-logo {
+      width: 118px;
+      height: auto;
+      margin-bottom: 10mm;
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+    }
+
+    .cover-eyebrow {
+      margin: 0 0 4mm;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+
+    .cover-title {
+      margin: 0;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 2.55rem;
+      font-weight: 700;
+      line-height: 1.12;
+      max-width: 16ch;
+    }
+
+    .cover-tagline {
+      margin: 6mm 0 0;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      font-style: italic;
+    }
+
+    .cover-rule {
+      width: 56px;
+      height: 3px;
+      background: var(--brand-gold);
+      margin: 8mm auto 0;
+      border: 0;
+    }
+
+    .cover-doc {
+      margin: 7mm 0 0;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .cover-bottom {
+      position: absolute;
+      left: 18mm;
+      right: 18mm;
+      bottom: 14mm;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.82rem;
+      z-index: 1;
+    }
+
+    /* ——— Welcome ——— */
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 6mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .welcome-copy p {
+      margin: 0 0 3.2mm;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--navy);
+    }
+
+    .welcome-copy h3 {
+      margin: 0 0 2mm;
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .welcome-points {
+      list-style: none;
+      margin: 0 0 4mm;
+      padding: 0;
+    }
+
+    .welcome-points li {
+      position: relative;
+      padding: 2.2mm 0 2.2mm 5.5mm;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      border-bottom: 1px solid rgba(197, 212, 223, 0.7);
+    }
+
+    .welcome-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand-gold);
+    }
+
+    .stats-panel {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--brand-gold);
+      padding: 5mm 5mm 4mm;
+      align-self: start;
+    }
+
+    .stats-panel h3 {
+      margin: 0 0 3.5mm;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .stat {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5mm;
+      padding: 2.4mm 0;
+      border-bottom: 1px solid rgba(197, 212, 223, 0.75);
+    }
+
+    .stat:last-child { border-bottom: 0; }
+
+    .stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* ——— Journey roadmap ——— */
+    .roadmap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3.5mm 4mm;
+      flex: 1;
+      align-content: start;
+    }
+
+    .phase {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      padding: 3.2mm 3.5mm 3mm;
+      position: relative;
+      min-height: 0;
+    }
+
+    .phase.parallel {
+      border-color: rgba(184, 148, 61, 0.65);
+      background: rgba(255, 250, 240, 0.9);
+    }
+
+    .phase-num {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      margin-bottom: 1mm;
+    }
+
+    .phase h3 {
+      margin: 0 0 2mm;
+      font-size: 0.92rem;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    .phase .note {
+      margin: 0 0 2mm;
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .phase ul {
+      margin: 0;
+      padding-left: 3.8mm;
+      font-size: 0.78rem;
+      line-height: 1.35;
+      color: var(--navy);
+    }
+
+    .phase li { margin: 0.4mm 0; }
+
+    .flow-arrow {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: var(--brand-gold);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      line-height: 1;
+      margin: -1mm 0;
+    }
+
+    /* ——— Tools ——— */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      flex: 1;
+      align-content: stretch;
+    }
+
+    .tool-cat {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      padding: 6mm 6mm;
+      min-height: 52mm;
+    }
+
+    .tool-cat h3 {
+      margin: 0 0 3mm;
+      font-size: 1rem;
+      color: var(--navy);
+      padding-bottom: 2mm;
+      border-bottom: 2px solid var(--brand-gold);
+    }
+
+    .tool-cat ul {
+      margin: 0;
+      padding-left: 4.5mm;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* ——— Build / Outcomes / Career / Support ——— */
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm 5mm;
+      flex: 1;
+      align-content: start;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 3mm;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      padding: 3.5mm 4mm;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .check-mark {
+      flex: 0 0 auto;
+      width: 1.15rem;
+      height: 1.15rem;
+      border-radius: 50%;
+      background: var(--ok);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .outcomes {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.8mm 5mm;
+      flex: 1;
+      align-content: start;
+    }
+
+    .outcomes li {
+      position: relative;
+      padding: 2.8mm 3mm 2.8mm 7mm;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .outcomes li::before {
+      content: "▸";
+      position: absolute;
+      left: 3mm;
+      top: 2.8mm;
+      color: var(--brand-gold);
+      font-weight: 700;
+    }
+
+    .lead {
+      margin: 0 0 5mm;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      flex: 1;
+      align-content: start;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      padding: 5mm;
+    }
+
+    .panel h3 {
+      margin: 0 0 3.5mm;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      padding-bottom: 2.5mm;
+      border-bottom: 2px solid var(--brand-gold);
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 4.5mm;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5mm 5mm;
+      flex: 1;
+      align-content: start;
+    }
+
+    .support-item {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--brand-gold);
+      padding: 4mm 4.5mm;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .screen-chrome {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+      .screen-chrome h1.doc-title,
+      .screen-chrome .doc-hint {
+        display: none !important;
+      }
+      .page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-chrome">
+    <h1 class="doc-title">Student Programme Guide</h1>
+    <p class="doc-hint">Muchuo’s Centre for Training &amp; Development — Complete Software Testing Programme</p>
+
+    <!-- PAGE 1 — Cover -->
+    <section class="page cover" aria-label="Page 1 — Cover">
+      <div class="cover-inner">
+        <img
+          class="cover-logo"
+          src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png"
+          alt="Muchuo’s Centre Logo"
+        />
+        <p class="cover-eyebrow">Muchuo’s Centre for Training &amp; Development</p>
+        <h1 class="cover-title">Complete Software Testing Programme</h1>
+        <p class="cover-tagline">“From Beginner to Job Ready”</p>
+        <hr class="cover-rule" />
+        <p class="cover-doc">Student Programme Guide</p>
+      </div>
+      <p class="cover-bottom">Modern QA Training · Practical · Career Focused</p>
+    </section>
+
+    <!-- PAGE 2 — Welcome -->
+    <section class="page" aria-label="Page 2 — Welcome">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 2</span>
+        </div>
+        <h2 class="page-title">Welcome</h2>
+        <div class="welcome-grid">
+          <div class="welcome-copy">
+            <p>
+              Welcome to the Complete Software Testing Programme at Muchuo’s Centre for Training &amp; Development.
+              This programme takes you from beginner foundations to job-ready QA skills through structured learning,
+              live classes, practical projects, and career preparation.
+            </p>
+            <h3>What this programme is about</h3>
+            <ul class="welcome-points">
+              <li>A complete pathway covering manual testing, API testing, SQL, automation, mobile testing, CI/CD, and ISTQB Foundation.</li>
+            </ul>
+            <h3>What students will achieve</h3>
+            <ul class="welcome-points">
+              <li>Build real portfolios, frameworks, and professional materials that prepare you for software testing roles.</li>
+            </ul>
+            <h3>What is expected from them</h3>
+            <ul class="welcome-points">
+              <li>Attend live sessions, complete practical work, practise daily, and engage with feedback and mock interviews.</li>
+            </ul>
+            <h3>How to get the best results</h3>
+            <ul class="welcome-points">
+              <li>Study consistently (around 2 hours daily), apply tools hands-on, revise for ISTQB Fridays, and use tutor support early.</li>
+            </ul>
+          </div>
+          <aside class="stats-panel" aria-label="Programme statistics">
+            <h3>Programme at a Glance</h3>
+            <div class="stat">
+              <span class="stat-label">Course Duration</span>
+              <span class="stat-value">12–16 Weeks</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Study Time</span>
+              <span class="stat-value">2 Hours Daily</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Live Classes</span>
+              <span class="stat-value">Saturday &amp; Sunday (2–4 Hours)</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">ISTQB Classes</span>
+              <span class="stat-value">Every Friday</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Delivery</span>
+              <span class="stat-value">Online</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Tutor Support</span>
+              <span class="stat-value">Included</span>
+            </div>
+          </aside>
+        </div>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3 — Learning Journey -->
+    <section class="page" aria-label="Page 3 — Your Learning Journey">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 3</span>
+        </div>
+        <h2 class="page-title">Your Learning Journey</h2>
+        <div class="roadmap">
+          <article class="phase">
+            <div class="phase-num">Phase 1</div>
+            <h3>Software Testing Fundamentals</h3>
+            <ul>
+              <li>SDLC</li>
+              <li>STLC</li>
+              <li>Testing Principles</li>
+              <li>Testing Types</li>
+              <li>Testing Levels</li>
+              <li>Defect Life Cycle</li>
+            </ul>
+          </article>
+          <article class="phase">
+            <div class="phase-num">Phase 2</div>
+            <h3>Manual UI Testing</h3>
+            <ul>
+              <li>Test Cases</li>
+              <li>Bug Reporting</li>
+              <li>Azure DevOps</li>
+              <li>Jira</li>
+              <li>Test Execution</li>
+              <li>Test Evidence</li>
+            </ul>
+          </article>
+          <article class="phase">
+            <div class="phase-num">Phase 3</div>
+            <h3>Manual API Testing</h3>
+            <ul>
+              <li>REST API</li>
+              <li>Postman</li>
+              <li>Swagger</li>
+              <li>Authentication</li>
+              <li>JSON</li>
+              <li>Status Codes</li>
+            </ul>
+          </article>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <article class="phase parallel">
+            <div class="phase-num">Phase 4</div>
+            <h3>ISTQB Foundation</h3>
+            <p class="note">Parallel with Phase 2 &amp; 3</p>
+            <ul>
+              <li>Complete CTFL Syllabus</li>
+              <li>Mock Exams</li>
+              <li>Exam Techniques</li>
+              <li>Revision Classes</li>
+            </ul>
+          </article>
+          <article class="phase">
+            <div class="phase-num">Phase 5</div>
+            <h3>SQL</h3>
+            <ul>
+              <li>SELECT</li>
+              <li>WHERE</li>
+              <li>JOIN</li>
+              <li>GROUP BY</li>
+              <li>Database Validation</li>
+            </ul>
+          </article>
+          <article class="phase">
+            <div class="phase-num">Phase 6</div>
+            <h3>Automation Testing (UI and API)</h3>
+            <ul>
+              <li>C#</li>
+              <li>Selenium</li>
+              <li>Reqnroll</li>
+              <li>RestSharp</li>
+              <li>Framework Design</li>
+              <li>Reporting</li>
+            </ul>
+          </article>
+
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+
+          <article class="phase">
+            <div class="phase-num">Phase 7</div>
+            <h3>Mobile Testing</h3>
+            <ul>
+              <li>Maestro</li>
+              <li>Appium</li>
+              <li>Android</li>
+              <li>iOS</li>
+              <li>Emulator</li>
+              <li>Real Devices</li>
+            </ul>
+          </article>
+          <article class="phase">
+            <div class="phase-num">Phase 8</div>
+            <h3>CI/CD</h3>
+            <ul>
+              <li>Azure DevOps</li>
+              <li>GitHub</li>
+              <li>Git Actions</li>
+              <li>Test Pipelines</li>
+            </ul>
+          </article>
+          <article class="phase">
+            <div class="phase-num">Phase 9</div>
+            <h3>Career Preparation</h3>
+            <ul>
+              <li>CV</li>
+              <li>LinkedIn</li>
+              <li>Portfolio</li>
+              <li>Interview Preparation</li>
+              <li>Mock Interviews</li>
+            </ul>
+          </article>
+        </div>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4 — Software & Tools -->
+    <section class="page" aria-label="Page 4 — Software & Tools">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 4</span>
+        </div>
+        <h2 class="page-title">Software &amp; Tools</h2>
+        <div class="tools-grid">
+          <div class="tool-cat">
+            <h3>IDEs</h3>
+            <ul>
+              <li>Visual Studio</li>
+              <li>Rider</li>
+            </ul>
+          </div>
+          <div class="tool-cat">
+            <h3>Manual Testing</h3>
+            <ul>
+              <li>Azure DevOps</li>
+              <li>Jira</li>
+              <li>Postman</li>
+              <li>Swagger</li>
+            </ul>
+          </div>
+          <div class="tool-cat">
+            <h3>Automation</h3>
+            <ul>
+              <li>Selenium</li>
+              <li>Reqnroll</li>
+              <li>RestSharp</li>
+              <li>Appium</li>
+              <li>Maestro</li>
+            </ul>
+          </div>
+          <div class="tool-cat">
+            <h3>Version Control</h3>
+            <ul>
+              <li>Git</li>
+              <li>GitHub</li>
+            </ul>
+          </div>
+        </div>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5 — What You Will Build -->
+    <section class="page" aria-label="Page 5 — What You Will Build">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 5</span>
+        </div>
+        <h2 class="page-title">What You Will Build</h2>
+        <div class="check-grid">
+          <div class="check-item"><span class="check-mark">✔</span><span>Manual Testing Portfolio</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>API Testing Portfolio</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>SQL Exercises</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>UI Automation Framework</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>API Automation Framework</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>Mobile Automation Framework</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>Azure DevOps Project</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>Professional CV</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>LinkedIn Profile</span></div>
+          <div class="check-item"><span class="check-mark">✔</span><span>Interview Preparation</span></div>
+        </div>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6 — Learning Outcomes -->
+    <section class="page" aria-label="Page 6 — Learning Outcomes">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 6</span>
+        </div>
+        <h2 class="page-title">Learning Outcomes</h2>
+        <p class="lead">By the end of this programme you will be able to:</p>
+        <ul class="outcomes">
+          <li>Design professional Test Cases</li>
+          <li>Execute Manual UI Tests</li>
+          <li>Test REST APIs</li>
+          <li>Validate databases using SQL</li>
+          <li>Build UI Automation Frameworks</li>
+          <li>Build API Automation Frameworks</li>
+          <li>Automate Mobile Applications</li>
+          <li>Integrate automated tests into CI/CD</li>
+          <li>Report defects professionally</li>
+          <li>Prepare for Software Testing interviews</li>
+          <li>Work confidently within Agile teams</li>
+        </ul>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7 — Career Opportunities -->
+    <section class="page" aria-label="Page 7 — Career Opportunities">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 7</span>
+        </div>
+        <h2 class="page-title">Career Opportunities</h2>
+        <div class="two-col">
+          <div class="panel">
+            <h3>Roles</h3>
+            <ul>
+              <li>Junior Software Tester</li>
+              <li>Manual Tester</li>
+              <li>QA Analyst</li>
+              <li>Automation Test Engineer</li>
+              <li>QA Automation Engineer</li>
+              <li>Software Test Analyst</li>
+              <li>SDET</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Typical industries</h3>
+            <ul>
+              <li>Finance</li>
+              <li>Retail</li>
+              <li>Healthcare</li>
+              <li>Insurance</li>
+              <li>Government</li>
+              <li>E-commerce</li>
+              <li>Technology</li>
+            </ul>
+          </div>
+        </div>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8 — Student Support -->
+    <section class="page" aria-label="Page 8 — Student Support">
+      <div class="page-inner">
+        <div class="page-header">
+          <div>
+            <p class="brand-line">Muchuo’s Centre for Training &amp; Development</p>
+            <p class="doc-line">Complete Software Testing Programme</p>
+          </div>
+          <span class="page-num">Page 8</span>
+        </div>
+        <h2 class="page-title">Student Support</h2>
+        <p class="lead">Students receive:</p>
+        <div class="support-grid">
+          <div class="support-item">Tutor Support</div>
+          <div class="support-item">Live Weekend Classes</div>
+          <div class="support-item">Friday ISTQB Classes</div>
+          <div class="support-item">Downloadable Resources</div>
+          <div class="support-item">Practical Projects</div>
+          <div class="support-item">Career Guidance</div>
+          <div class="support-item">Interview Preparation</div>
+          <div class="support-item">Community Support</div>
+        </div>
+        <div class="page-footer">
+          <span>Student Programme Guide</span>
+          <img src="assets/c__Users_muchu_AppData_Roaming_Cursor_User_workspaceStorage_c27a1fe6b1cd6376c22e2e6afc91e0e5_images_Muchuos-Centre-094bba0c-0951-49f0-a7a6-3439ec2aea5a.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
