@@ -13,6 +13,12 @@ Static HTML slide decks and presenter notes for a software testing course. Open 
 
 Helper scripts (`_patch_layer_svg.py`, `_read_pptx8.py`) are optional tooling for maintenance.
 
+## Official pathway docs (LRS)
+
+Working documents after LRS application AQEC15U7 was rejected:
+
+- `official-docs/lrs-pathway/` — gap analysis, evidence checklist, BCS/LRS draft emails, reapplication checklist, printable brief (`LRS-ACCESS-PATHWAY-BRIEF.html`)
+
 ## Push this folder to a new GitHub repository
 
 1. On [GitHub](https://github.com/new), create a **new repository** (any name, e.g. `software-testing-notes-pp`). Do **not** add a README or `.gitignore` there (this folder already has them).
