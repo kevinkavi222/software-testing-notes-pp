@@ -13,11 +13,12 @@ Static HTML slide decks and presenter notes for a software testing course. Open 
 
 Helper scripts (`_patch_layer_svg.py`, `_read_pptx8.py`) are optional tooling for maintenance.
 
-## Official pathway docs (LRS)
+## Official pathway docs (LRS + centre approval)
 
 Working documents after LRS application AQEC15U7 was rejected:
 
 - `official-docs/lrs-pathway/` — gap analysis, evidence checklist, BCS/LRS draft emails, reapplication checklist, printable brief (`LRS-ACCESS-PATHWAY-BRIEF.html`)
+- `official-docs/centre-approval-and-funding/` — awarding-body centre approval docs/fees, Focus Awards FQP explained, local council/government funding readiness
 
 ## Push this folder to a new GitHub repository
 
